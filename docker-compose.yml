@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  product-service:
+    build: ./service
+    volumes:
+      - ./service:/usr/src/app
+    ports:
+      - 5001:5005
+  product-page:
+    build: ./page
+    volumes:
+      - ./page/src:/var/www/html/
+    ports:
+      - 5002:80
+  product-page2:
+    build: ./page2
+    volumes:
+      - ./page2/src:/var/www/html/
+    ports:
+      - 5003:80
